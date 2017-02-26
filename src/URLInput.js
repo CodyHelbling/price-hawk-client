@@ -24,6 +24,7 @@ const muiTheme = getMuiTheme({
 
 class FindPrices extends Component {
   updateURL(e) {
+    console.log("Url: ", e.target.value);
     this.props.updateUrl(e.target.value)
   }
 
