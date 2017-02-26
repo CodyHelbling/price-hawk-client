@@ -27,8 +27,9 @@ const muiTheme = getMuiTheme({
 class URLInput extends Component {
 
   getPrices(e) {
+    console.log("target: " + this.props.url);
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", this.props.url, false);
+    xhr.open("GET", "http://localhost:5000/prices?url="+this.props.url, false);
     xhr.send();
     console.log(xhr.response);
     var jsonResponse = JSON.parse(xhr.response);
