@@ -10,17 +10,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      url: "",
+      url: "https://www.walmart.com/",
       prices: [],
-    }
+    };
   }
 
   updateUrl(url) {
-    this.setState({url})
+    console.log("Updating URL to : "+url);
+    this.setState({url});
   }
 
   updatePrices(prices){
-    this.setState({prices})
+    this.setState({prices});
   }
 
   render() {
@@ -28,8 +29,15 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <Header />
-          <URLInput URL={this.state.url} />
-          <FindPrices prices={this.state.prices}/>
+          <URLInput
+            updateUrl={this.updateUrl.bind(this)}
+            url={this.state.url}
+          />
+
+          <FindPrices
+            updatePrices={this.updatePrices.bind(this)}
+            prices={this.state.prices}
+          />
         </div>
       </div>
     );
