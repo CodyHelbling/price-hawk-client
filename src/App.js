@@ -36,6 +36,7 @@ class App extends Component {
 
           <FindPrices
             updatePrices={this.updatePrices.bind(this)}
+            url={this.state.url}
             prices={this.state.prices}
           />
         </div>
